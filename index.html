@@ -1,310 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red Drakon Music</title>
+  <meta name="description" content="Red Drakon Music — Music Without Limits.">
 
-    <title>Red Drakon Music</title>
-    <meta name="description" content="Red Drakon Music — Music Without Limits.">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 50% 12%, rgba(100, 0, 0, 0.22), transparent 36%),
+        #050505;
+      color: #ffffff;
+    }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #050505;
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            overflow-x: hidden;
-        }
+    body {
+      display: flex;
+      justify-content: center;
+      padding: 28px 16px 24px;
+    }
 
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background:
-                radial-gradient(circle at 50% 10%, rgba(150, 0, 0, 0.18), transparent 35%),
-                radial-gradient(circle at 10% 90%, rgba(100, 0, 0, 0.10), transparent 30%);
-            pointer-events: none;
-        }
+    .page {
+      width: 100%;
+      max-width: 520px;
+      text-align: center;
+    }
 
-        .page {
-            width: 100%;
-            max-width: 620px;
-            padding: 55px 22px 40px;
-            position: relative;
-            z-index: 1;
-        }
+    .logo {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 18px;
+    }
 
-        .brand {
-            text-align: center;
-            margin-bottom: 38px;
-        }
+    .brand {
+      margin: 0;
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: 4px;
+    }
 
-        .logo {
-            width: 105px;
-            height: 105px;
-            margin: 0 auto 22px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #0c0c0c;
-            box-shadow: 0 0 45px rgba(150, 0, 0, 0.25);
-            font-size: 32px;
-            font-weight: 900;
-            letter-spacing: -2px;
-        }
+    .tagline {
+      margin: 7px 0 34px;
+      color: #a9a9a9;
+      font-size: 8px;
+      letter-spacing: 5px;
+    }
 
-        .brand h1 {
-            font-size: 28px;
-            letter-spacing: 4px;
-            font-weight: 800;
-        }
+    .section {
+      margin-top: 17px;
+    }
 
-        .tagline {
-            margin-top: 9px;
-            color: #999999;
-            font-size: 12px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-        }
+    .section-title {
+      margin: 0 0 8px;
+      color: #777777;
+      font-size: 8px;
+      letter-spacing: 3px;
+      text-align: left;
+      text-transform: uppercase;
+    }
 
-        .section-title {
-            font-size: 11px;
-            letter-spacing: 3px;
-            color: #777777;
-            text-transform: uppercase;
-            margin: 28px 0 12px;
-        }
+    .release {
+      margin-bottom: 16px;
+      padding: 14px;
+      border: 1px solid #2d2d2d;
+      border-radius: 8px;
+      background: #101010;
+      text-align: left;
+    }
 
-        .release {
-            background: linear-gradient(135deg, #151515, #0b0b0b);
-            border: 1px solid #292929;
-            border-radius: 16px;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            gap: 17px;
-            margin-bottom: 24px;
-        }
+    .release-title {
+      margin-bottom: 4px;
+      font-size: 13px;
+      font-weight: 700;
+    }
 
-        .release-art {
-            width: 75px;
-            height: 75px;
-            border-radius: 10px;
-            background:
-                radial-gradient(circle at 50% 50%, #9b0000, #260000 45%, #080808 75%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            font-size: 22px;
-            font-weight: 900;
-        }
+    .release-text {
+      color: #999999;
+      font-size: 8px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
 
-        .release-info {
-            flex: 1;
-        }
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
 
-        .release-label {
-            color: #888888;
-            font-size: 10px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+    .link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 42px;
+      padding: 11px 16px;
+      border: 1px solid #303030;
+      border-radius: 7px;
+      background: #101010;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
 
-        .release h2 {
-            margin-top: 5px;
-            font-size: 18px;
-        }
+    .link:hover {
+      border-color: #a00000;
+      background: #151515;
+      transform: translateY(-1px);
+    }
 
-        .release p {
-            margin-top: 4px;
-            color: #888888;
-            font-size: 12px;
-        }
+    .contact-card {
+      padding: 15px;
+      border: 1px solid #3b2222;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #120909, #0d0d0d);
+      text-align: left;
+    }
 
-        .listen {
-            display: inline-block;
-            margin-top: 10px;
-            color: white;
-            text-decoration: none;
-            font-size: 11px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
+    .contact-item + .contact-item {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #2a1b1b;
+    }
 
-        .listen:hover {
-            color: #ff3333;
-        }
+    .contact-label {
+      margin-bottom: 5px;
+      color: #d14a4a;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
 
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 11px;
-        }
+    .contact-value {
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+      word-break: break-word;
+    }
 
-        .link {
-            width: 100%;
-            min-height: 58px;
-            padding: 16px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: white;
-            background: #111111;
-            border: 1px solid #292929;
-            border-radius: 12px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            transition: 0.25s ease;
-        }
+    .contact-action {
+      display: inline-block;
+      margin-top: 7px;
+      color: #c9c9c9;
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
 
-        .link:hover {
-            background: #1a1a1a;
-            border-color: #770000;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(120, 0, 0, 0.15);
-        }
+    .contact-action:hover {
+      color: #ff4a4a;
+    }
 
-        .footer {
-            text-align: center;
-            margin-top: 45px;
-            padding-top: 25px;
-            border-top: 1px solid #181818;
-            color: #555555;
-            font-size: 10px;
-            letter-spacing: 2px;
-        }
+    .footer {
+      margin-top: 30px;
+      padding-top: 16px;
+      border-top: 1px solid #242424;
+      color: #555555;
+      font-size: 8px;
+      letter-spacing: 2px;
+    }
 
-        @media (max-width: 480px) {
-            .page {
-                padding: 40px 16px 30px;
-            }
+    @media (max-width: 420px) {
+      .logo {
+        width: 135px;
+        height: 135px;
+      }
 
-            .brand h1 {
-                font-size: 23px;
-                letter-spacing: 3px;
-            }
-
-            .tagline {
-                font-size: 10px;
-                letter-spacing: 3px;
-            }
-        }
-    </style>
+      .brand {
+        font-size: 17px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <main class="page">
 
-<div class="page">
+    <img class="logo" src="logo.png" alt="Red Drakon Music logo">
 
-    <header class="brand">
-        <div class="logo">RDM</div>
+    <h1 class="brand">RED DRAKON MUSIC</h1>
+    <div class="tagline">MUSIC WITHOUT LIMITS</div>
 
-        <h1>RED DRAKON MUSIC</h1>
+    <section class="section">
+      <div class="section-title">Status</div>
 
-        <p class="tagline">Music Without Limits</p>
-    </header>
+      <div class="release">
+        <div class="release-title">Official Launch — Coming Soon</div>
+        <div class="release-text">
+          Red Drakon Music is preparing to launch.
+        </div>
+      </div>
+    </section>
 
+    <section class="section">
+      <div class="section-title">Music</div>
 
-    <div class="section-title">Latest Release</div>
+      <div class="links">
+        <a class="link"
+           href="https://music.youtube.com/@reddrakonmusic?si=BLU8yEiWkHXFVUb4"
+           target="_blank"
+           rel="noopener noreferrer">
+          YouTube Music
+        </a>
 
-    <div class="release">
+        <a class="link"
+           href="https://www.youtube.com/channel/UCxFd3rDQ5w2QX0YowjsadLg"
+           target="_blank"
+           rel="noopener noreferrer">
+          YouTube
+        </a>
+      </div>
+    </section>
 
-        <div class="release-art">
-            RDM
+    <section class="section">
+      <div class="section-title">Follow Red Drakon Music</div>
+
+      <div class="links">
+        <a class="link"
+           href="https://www.instagram.com/reddrakonmusic/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Instagram
+        </a>
+
+        <a class="link"
+           href="https://www.facebook.com/profile.php?id=61592720976693"
+           target="_blank"
+           rel="noopener noreferrer">
+          Facebook
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Contact</div>
+
+      <div class="contact-card">
+
+        <div class="contact-item">
+          <div class="contact-label">EMAIL</div>
+          <div class="contact-value">reddrakonmusic@gmail.com</div>
+          <a class="contact-action"
+             href="mailto:reddrakonmusic@gmail.com">
+            Contact us by email →
+          </a>
         </div>
 
-        <div class="release-info">
-            <div class="release-label">New Music</div>
-
-            <h2>Latest Release</h2>
-
-            <p>Red Drakon Music</p>
-
-            <a class="listen" href="#" target="_blank">
-                LISTEN NOW →
-            </a>
+        <div class="contact-item">
+          <div class="contact-label">INSTAGRAM</div>
+          <div class="contact-value">@reddrakonmusic</div>
+          <a class="contact-action"
+             href="https://www.instagram.com/reddrakonmusic/"
+             target="_blank"
+             rel="noopener noreferrer">
+            Visit us on Instagram →
+          </a>
         </div>
 
-    </div>
-
-
-    <div class="section-title">Music</div>
-
-    <div class="links">
-
-        <a class="link" href="#" target="_blank">
-            Spotify
-        </a>
-
-        <a class="link" href="#" target="_blank">
-            Apple Music
-        </a>
-
-        <a class="link" href="#" target="_blank">
-            YouTube Music
-        </a>
-
-        <a class="link" href="#" target="_blank">
-            SoundCloud
-        </a>
-
-    </div>
-
-
-    <div class="section-title">Follow Red Drakon Music</div>
-
-    <div class="links">
-
-        <a class="link" href="#" target="_blank">
-            YouTube
-        </a>
-
-        <a class="link" href="#" target="_blank">
-            Instagram
-        </a>
-
-        <a class="link" href="#" target="_blank">
-            TikTok
-        </a>
-
-    </div>
-
-
-    <div class="section-title">Official</div>
-
-    <div class="links">
-
-        <a class="link" href="#" target="_blank">
-            Official Red Drakon Music Website
-        </a>
-
-        <a class="link" href="#" target="_blank">
-            Contact
-        </a>
-
-    </div>
-
+      </div>
+    </section>
 
     <footer class="footer">
-        © 2026 RED DRAKON MUSIC
-        <br><br>
-        MUSIC WITHOUT LIMITS
+      © 2026 RED DRAKON MUSIC
+      <br><br>
+      MUSIC WITHOUT LIMITS
     </footer>
 
-</div>
-
+  </main>
 </body>
 </html>
