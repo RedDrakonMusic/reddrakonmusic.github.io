@@ -3,357 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Red Drakon Music</title>
-  <meta name="description" content="Red Drakon Music — Music Without Limits.">
-
-  <style>
-    * { box-sizing: border-box; }
-
-    html, body {
-      margin: 0;
-      min-height: 100%;
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at 50% 8%, rgba(130,0,0,.22), transparent 34%),
-        #050505;
-      color: #fff;
-    }
-
-    body {
-      display: flex;
-      justify-content: center;
-      padding: 28px 16px 24px;
-    }
-
-    .page {
-      width: 100%;
-      max-width: 520px;
-      text-align: center;
-    }
-
-    .logo {
-      width: 150px;
-      height: 150px;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto 18px;
-    }
-
-    .brand {
-      margin: 0;
-      font-size: 19px;
-      font-weight: 900;
-      letter-spacing: 4px;
-    }
-
-    .tagline {
-      margin: 7px 0 34px;
-      color: #a9a9a9;
-      font-size: 8px;
-      letter-spacing: 5px;
-      font-weight: 700;
-    }
-
-    .section {
-      margin-top: 19px;
-    }
-
-    .section-title {
-      margin: 0 0 9px;
-      color: #8a8a8a;
-      font-size: 8px;
-      letter-spacing: 3px;
-      text-align: left;
-      text-transform: uppercase;
-      font-weight: 800;
-    }
-
-    .release {
-      margin-bottom: 16px;
-      padding: 14px;
-      border: 1px solid #2d2d2d;
-      border-radius: 9px;
-      background: #101010;
-      text-align: left;
-    }
-
-    .release-title {
-      margin-bottom: 4px;
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .release-text {
-      color: #999;
-      font-size: 8px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-    }
-
-    /* Compact, bold platform buttons */
-    .link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      width: 100%;
-      height: 48px;
-      padding: 8px 18px;
-      border: 0;
-      border-radius: 9px;
-      color: #fff;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 900;
-      letter-spacing: .2px;
-      box-shadow: 0 4px 14px rgba(0,0,0,.25);
-      transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
-      overflow: hidden;
-    }
-
-    .link:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.08);
-      box-shadow: 0 7px 20px rgba(0,0,0,.38);
-    }
-
-    .link:active {
-      transform: translateY(0);
-    }
-
-    .platform-icon {
-      position: absolute;
-      left: 15px;
-      width: 27px;
-      height: 27px;
-      object-fit: contain;
-      display: block;
-    }
-
-    .youtube-music {
-      background: #ff0000;
-    }
-
-    .youtube {
-      background: #ff0000;
-    }
-
-    .instagram {
-      background: linear-gradient(135deg, #405de6 0%, #833ab4 38%, #e1306c 68%, #fd1d1d 82%, #fcb045 100%);
-    }
-
-    .facebook {
-      background: #1877f2;
-    }
-
-    .tiktok,
-    .threads {
-      background: #090909;
-      border: 1px solid #303030;
-    }
-
-    /* Clean platform marks for TikTok and Threads.
-       These stay visually simple and do not compete with the RDM branding. */
-    .tiktok-mark {
-      position: absolute;
-      left: 17px;
-      width: 22px;
-      height: 27px;
-      font-size: 25px;
-      line-height: 27px;
-      font-weight: 900;
-      color: #fff;
-      text-shadow: -2px 0 #25f4ee, 2px 0 #fe2c55;
-    }
-
-    .threads-mark {
-      position: absolute;
-      left: 17px;
-      width: 25px;
-      height: 25px;
-      border: 2px solid #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      font-weight: 900;
-      color: #fff;
-    }
-
-    .contact-card {
-      padding: 15px;
-      border: 1px solid #3b2222;
-      border-radius: 8px;
-      background: linear-gradient(135deg,#120909,#0d0d0d);
-      text-align: left;
-    }
-
-    .contact-item + .contact-item {
-      margin-top: 15px;
-      padding-top: 15px;
-      border-top: 1px solid #2a1b1b;
-    }
-
-    .contact-label {
-      margin-bottom: 5px;
-      color: #ff4a4a;
-      font-size: 8px;
-      font-weight: 900;
-      letter-spacing: 3px;
-    }
-
-    .contact-value {
-      color: #fff;
-      font-size: 12px;
-      font-weight: 800;
-      word-break: break-word;
-    }
-
-    .contact-action {
-      display: inline-block;
-      margin-top: 7px;
-      color: #d5d5d5;
-      font-size: 9px;
-      letter-spacing: 1px;
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .contact-action:hover {
-      color: #ff4a4a;
-    }
-
-    .footer {
-      margin-top: 30px;
-      padding-top: 16px;
-      border-top: 1px solid #242424;
-      color: #555;
-      font-size: 8px;
-      letter-spacing: 2px;
-    }
-
-    @media (max-width: 420px) {
-      .logo { width: 135px; height: 135px; }
-      .brand { font-size: 17px; }
-      .link { height: 46px; font-size: 13px; }
-    }
-  </style>
+  <meta name="theme-color" content="#050506">
+  <meta name="description" content="Red Drakon Music — Music Without Limits. Official links and social profiles.">
+  <title>Red Drakon Music — Music Without Limits</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <main class="page">
+  <main class="page-shell">
+    <img class="lens lens-top" src="assets/lens-top.png" alt="" aria-hidden="true">
+    <img class="lens lens-bottom" src="assets/lens-bottom.png" alt="" aria-hidden="true">
+    <img class="dragon" src="assets/red-dragon.png" alt="" aria-hidden="true">
 
-    <img class="logo" src="logo.png" alt="Red Drakon Music logo">
+    <section class="content" aria-label="Red Drakon Music official links">
+      <header class="hero">
+        <img class="logo" src="assets/rdm-logo-sphere.png" alt="Red Drakon Music logo">
+      </header>
 
-    <h1 class="brand">RED DRAKON MUSIC</h1>
-    <div class="tagline">MUSIC WITHOUT LIMITS</div>
+      <section class="status-card" aria-label="Launch status">
+        <h1>Official Launch — Coming Soon</h1>
+        <p>RED DRAKON MUSIC IS PREPARING TO LAUNCH</p>
+      </section>
 
-    <section class="section">
-      <div class="section-title">Status</div>
+      <nav class="links" aria-label="Official links">
+        <a class="platform youtube" href="https://www.youtube.com/channel/UCxFd3rDQ5w2QX0YowjsadLg" target="_blank" rel="noopener">
+          <img src="assets/youtube.png" alt="" aria-hidden="true">
+          <span>YouTube</span>
+        </a>
 
-      <div class="release">
-        <div class="release-title">Official Launch — Coming Soon</div>
-        <div class="release-text">Red Drakon Music is preparing to launch.</div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-title">Music</div>
-
-      <div class="links">
-        <a class="link youtube-music"
-           href="https://music.youtube.com/@reddrakonmusic"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="Visit Red Drakon Music on YouTube Music">
-          <img class="platform-icon" src="youtube-music.png" alt="">
+        <a class="platform youtube-music" href="https://music.youtube.com/@reddrakonmusic" target="_blank" rel="noopener">
+          <img src="assets/youtube-music.png" alt="" aria-hidden="true">
           <span>YouTube Music</span>
         </a>
 
-        <a class="link youtube"
-           href="https://www.youtube.com/channel/UCxFd3rDQ5w2QX0YowjsadLg"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="Visit Red Drakon Music on YouTube">
-          <img class="platform-icon" src="youtube.png" alt="">
-          <span>YouTube</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-title">Follow Red Drakon Music</div>
-
-      <div class="links">
-        <a class="link instagram"
-           href="https://www.instagram.com/reddrakonmusic/"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="Visit Red Drakon Music on Instagram">
-          <img class="platform-icon" src="instagram.png" alt="">
+        <a class="platform instagram" href="https://www.instagram.com/reddrakonmusic/" target="_blank" rel="noopener">
+          <img src="assets/instagram.png" alt="" aria-hidden="true">
           <span>Instagram</span>
         </a>
 
-        <a class="link facebook"
-           href="https://www.facebook.com/profile.php?id=61592720976693"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="Visit Red Drakon Music on Facebook">
-          <img class="platform-icon" src="facebook.png" alt="">
+        <!-- Replace the Facebook href below with the exact official profile URL when ready. -->
+        <a class="platform facebook" href="https://www.facebook.com/profile.php?id=61592720976693" target="_blank" rel="noopener">
+          <img src="assets/facebook.png" alt="" aria-hidden="true">
           <span>Facebook</span>
         </a>
 
-        <a class="link tiktok"
-           href="https://www.tiktok.com/@red.drakon.music"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="Visit Red Drakon Music on TikTok">
-          <span class="tiktok-mark" aria-hidden="true">♪</span>
-          <span><img src="tiktok.png" alt="TikTok" class="platform-icon">TikTok</span>
+        <a class="platform tiktok" href="https://www.tiktok.com/@red.drakon.music" target="_blank" rel="noopener">
+          <img src="assets/tiktok.png" alt="" aria-hidden="true">
+          <span>TikTok</span>
         </a>
 
-        <a class="link threads"
-           href="https://www.threads.com/@reddrakonmusic"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="Visit Red Drakon Music on Threads">
-          <span class="threads-mark" aria-hidden="true">@</span>
-          <span><img src="threads.png" alt="Threads" class="platform-icon">Threads</span>
+        <a class="platform threads" href="https://www.threads.com/@reddrakonmusic" target="_blank" rel="noopener">
+          <img src="assets/threads.png" alt="" aria-hidden="true">
+          <span>Threads</span>
         </a>
-      </div>
-    </section>
+      </nav>
 
-    <section class="section">
-      <div class="section-title">Contact</div>
-
-      <div class="contact-card">
-        <div class="contact-item">
-          <div class="contact-label">EMAIL</div>
-          <div class="contact-value">reddrakonmusic@gmail.com</div>
-          <a class="contact-action" href="mailto:reddrakonmusic@gmail.com">
-            Contact us by email →
-          </a>
+      <section class="website-card" aria-label="Official website status">
+        <img src="assets/rdm-logo-sphere.png" alt="" aria-hidden="true">
+        <div>
+          <strong>Official Website</strong>
+          <span>Coming Soon</span>
         </div>
+      </section>
 
-        <div class="contact-item">
-          <div class="contact-label">INSTAGRAM</div>
-          <div class="contact-value">@reddrakonmusic</div>
-          <a class="contact-action"
-             href="https://www.instagram.com/reddrakonmusic/"
-             target="_blank" rel="noopener noreferrer">
-            Visit us on Instagram →
-          </a>
-        </div>
-      </div>
+      <section class="contact">
+        <h2>Contact</h2>
+
+        <a class="contact-row" href="mailto:reddrakonmusic@gmail.com">
+          <span class="contact-label">EMAIL</span>
+          <span class="contact-value">
+            <strong>reddrakonmusic@gmail.com</strong>
+            <small>Contact us by email →</small>
+          </span>
+        </a>
+
+        <a class="contact-row" href="https://www.instagram.com/reddrakonmusic/" target="_blank" rel="noopener">
+          <span class="contact-label">INSTAGRAM</span>
+          <span class="contact-value">
+            <strong>@reddrakonmusic</strong>
+            <small>Visit us on Instagram →</small>
+          </span>
+        </a>
+      </section>
+
+      <footer>© <span id="year"></span> RED DRAKON MUSIC · MUSIC WITHOUT LIMITS</footer>
     </section>
-
-    <footer class="footer">
-      © 2026 RED DRAKON MUSIC
-      <br><br>
-      MUSIC WITHOUT LIMITS
-    </footer>
-
   </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
